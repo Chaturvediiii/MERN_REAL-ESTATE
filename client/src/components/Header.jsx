@@ -1,8 +1,10 @@
 import React from 'react'
 import { Navbar , Button} from "flowbite-react";
 import { Link , useLocation} from 'react-router-dom';
+import {useSelector} from 'react-redux'
 
 export default function Header() {
+  const {currentUser} = useSelector(state=>state.user)
     const path = useLocation().pathname;
   return (
     <Navbar className='mb-5'>
@@ -11,8 +13,12 @@ export default function Header() {
         <span className='text-slate-700'>Estate</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Button className='bg-slate-700'><Link to='sign-in'>Sign In</Link></Button>
+        <Link to='/profile'>
+        {currentUser ? (
+          <img className='rounded-full h-7 w-7 object-cover' src={currentUser.avatar} alt="profile" />
+        ) : <Button className='bg-slate-700'><Link to='sign-in'>Sign In</Link></Button>}
         <Navbar.Toggle />
+        </Link>
       </div>
       <Navbar.Collapse>
         <Navbar.Link active={path === '/'} as={'div'}><Link to='/'>Home</Link></Navbar.Link>
