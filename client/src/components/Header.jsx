@@ -5,13 +5,13 @@ import { Link , useLocation} from 'react-router-dom';
 export default function Header() {
     const path = useLocation().pathname;
   return (
-    <Navbar className='my-5'>
+    <Navbar className='mb-5'>
       <Navbar.Brand  className='font-bold text-10xl sm:text-xl'>
         <span className='text-slate-500'>Real</span>
         <span className='text-slate-700'>Estate</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Button>Sign In</Button>
+        <Button className='bg-slate-700'><Link to='sign-in'>Sign In</Link></Button>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
