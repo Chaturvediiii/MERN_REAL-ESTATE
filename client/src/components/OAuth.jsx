@@ -1,6 +1,6 @@
 import React from 'react'
 import {GoogleAuthProvider,getAuth,signInWithPopup} from '@firebase/auth'
-import { app } from '../firebase.config'
+import { app } from '../../firebase.config'
 import {useDispatch,useSelector} from 'react-redux'
 import { signInStart,signInFailure,signInSuccess } from '../redux/user/userSlice';
 import {useNavigate} from 'react-router-dom'
