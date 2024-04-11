@@ -6,12 +6,12 @@ import jwt from "jsonwebtoken";
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
   const hashedPassword = bcryptjs.hashSync(password, 10);
-  const newuser = new User({ username, password: hashedPassword, email });
+  const newUser = new User({ username, password: hashedPassword, email });
   try {
-    await newuser.save();
-    res.status(201).json("User created successfully");
-  } catch (err) {
-    next(err);
+    await newUser.save();
+    res.status(201).json("User created successfully"); //status for user created
+  } catch (error) {
+    next(error);
   }
 };
 
@@ -28,8 +28,8 @@ export const signin = async (req, res, next) => {
       .cookie("access_token", token, { httpOnly: true })
       .status(200)
       .json(rest);
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 };
 
