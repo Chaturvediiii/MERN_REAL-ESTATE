@@ -16,7 +16,8 @@ export default function Header() {
         <Link to='/profile'>
         {currentUser ? (
           <img className='rounded-full h-7 w-7 object-cover' src={currentUser.avatar} alt="profile" />
-        ) : <Button className='bg-slate-700'><Link to='sign-in'>Sign In</Link></Button>}
+        ) : <Button className='bg-slate-700'><Link to='sign-in'>Sign In</Link></Button>
+        }
         <Navbar.Toggle />
         </Link>
       </div>
