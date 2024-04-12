@@ -11,6 +11,7 @@ import OurAgents from './pages/OurAgents';
 import Blog from './pages/Blog';
 import SignUp from './pages/SignUp';
 import PrivateRoute from './components/PrivateRoute';
+import Footer from './components/FooterBar';
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <Route path='/our-agents' element={<OurAgents/>}/>
         <Route path='/blog' element={<Blog/>}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }
