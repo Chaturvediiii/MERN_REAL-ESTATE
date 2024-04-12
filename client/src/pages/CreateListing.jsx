@@ -161,7 +161,7 @@ export default function CreateListing() {
         <div className='flex flex-col gap-4 flex-1'>
           <input
             type='text'
-            placeholder='Name'
+            placeholder='Title'
             className='border p-3 rounded-lg'
             id='name'
             maxLength='62'
