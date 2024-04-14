@@ -15,6 +15,7 @@ import Footer from './components/FooterBar';
 import CreateListing from './pages/CreateListing';
 import UpdateListing from './pages/updateListing';
 import Listing from './pages/Listing';
+import Search from './pages/Search';
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
         <Route path='/our-agents' element={<OurAgents/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/listing/:listingId' element={<Listing/>}/>
+        <Route path='/search' element={<Search/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
