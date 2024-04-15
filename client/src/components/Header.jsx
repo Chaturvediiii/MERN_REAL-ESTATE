@@ -7,7 +7,7 @@ export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
   const path = useLocation().pathname;
   return (
-    <Navbar className="mb-5">
+    <Navbar>
       <Navbar.Brand className="font-bold text-10xl sm:text-xl">
         <span className="text-slate-500">Real</span>
         <span className="text-slate-700">Estate</span>

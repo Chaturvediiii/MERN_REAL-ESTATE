@@ -18,9 +18,10 @@ import {
   signOutUserSuccess,
   signOutUserFailure 
 } from '../redux/user/userSlice';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Profile() {
+  const navigate = useNavigate()
   const fileRef = useRef(null);
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const { currentUser,loading,error } = useSelector((state) => state.user);
@@ -133,6 +134,10 @@ export default function Profile() {
     }
   };
 
+  const handleCreateBlog = () =>{
+    navigate('/create-post')
+  }
+
   const handleFileUpload = (file) => {
     const storage = getStorage(app);
     const fileName = new Date().getTime() + file.name;
@@ -213,6 +218,7 @@ export default function Profile() {
          {loading ? 'Loading...' : 'Update'}
         </button>
         <Link className='bg-green-700 text-white text-center rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80' to='/create-listing'>Create Listing</Link>
+        <Link className='bg-yellow-700 text-white text-center rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80' to='/create-blog'>Create Blog</Link>
       </form>
       <div className='flex justify-between mt-5'>
         <span  onClick={handleDeleteUser} className='text-red-700 cursor-pointer'>Delete account</span>
