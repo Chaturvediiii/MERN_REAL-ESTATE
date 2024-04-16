@@ -56,41 +56,12 @@ export const updateUser = async (req, res, next) => {
 
   export const getUser = async (req, res, next) => {
     try {
-      
-      const user = await User.findById(req.params.id);
-    
-      if (!user) return next(errorHandler(404, 'User not found!'));
-    
-      const { password: pass, ...rest } = user._doc;
-    
+      const user = await User.findById(req.params.userId);
+      if (!user) {
+        return next(errorHandler(404, 'User not found'));
+      }
+      const { password, ...rest } = user._doc;
       res.status(200).json(rest);
-    } catch (error) {
-      next(error);
-    }
-  };
-
-  export const getUsers = async (req, res, next) => {
-    try {
-      const startIndex = parseInt(req.query.startIndex) || 0;
-      const limit = parseInt(req.query.limit) || 9;
-      const sortDirection = req.query.sort === 'asc' ? 1 : -1;
-  
-      const users = await User.find()
-        .sort({ createdAt: sortDirection })
-        .skip(startIndex)
-        .limit(limit);
-  
-      const usersWithoutPassword = users.map((user) => {
-        const { password, ...rest } = user._doc;
-        return rest;
-      });
-  
-  
-      const now = new Date();
-  
-      res.status(200).json({
-        users: usersWithoutPassword,
-      });
     } catch (error) {
       next(error);
     }

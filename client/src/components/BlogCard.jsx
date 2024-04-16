@@ -1,17 +1,34 @@
+import { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function BlogCard({ post,users }) {
+export default function BlogCard({ post }) {
+  const [user,setUser] = useState({})
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        console.log(post.userRef);
+        const res = await fetch(`/api/user/${post.userId}`);
+        const data = await res.json();
+        if (res.ok) {
+          setUser(data);
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    getUser();
+  }, [post]);
   return (
-    <div className='group relative w-full border border-teal-500 hover:border-2 h-content  overflow-hidden rounded-lg sm:w-[200px] transition-all'>
-      <div className='p-3 flex flex-col gap-2'>
-        <p className='text-lg font-semibold line-clamp-2'>{post.title}</p>
-        <span className='italic text-sm'>{post.category}</span>
-        <Link
-          to={`/post/${post.slug}`}
-          
-        >
-          Read stories
-        </Link>
+<div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
+      <img
+        className="w-full h-64 object-cover"
+        src={user.avatar}
+        alt="Profile Photo"
+      />
+      <div className="px-6 py-4">
+        <div className="font-bold text-xl mb-2">{user.username}</div>
+        <p className="text-gray-700 text-base">{post.title}</p>
+        <p className="text-gray-700 text-base">{post.createdAt}</p>
       </div>
     </div>
   );

@@ -15,8 +15,6 @@ import {
   deleteUserFailure,
   deleteUserSuccess,
   signOutUserStart,
-  signOutUserSuccess,
-  signOutUserFailure 
 } from '../redux/user/userSlice';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -133,10 +131,6 @@ export default function Profile() {
       console.log(error.message);
     }
   };
-
-  const handleCreateBlog = () =>{
-    navigate('/create-post')
-  }
 
   const handleFileUpload = (file) => {
     const storage = getStorage(app);
