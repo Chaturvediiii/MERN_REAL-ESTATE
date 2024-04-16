@@ -19,7 +19,7 @@ export default function BlogCard({ post }) {
     getUser();
   }, [post]);
   return (
-<div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
+<div className='bg-white shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full sm:w-[330px]'>
       <img
         className="w-full h-64 object-cover"
         src={user.avatar}

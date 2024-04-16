@@ -35,7 +35,7 @@ export default function Blog() {
         {posts && posts.length > 0 && (
           <div className='flex flex-col gap-6'>
             <h2 className='text-2xl font-semibold text-center'>Recent Blogs</h2>
-            <div className='flex flex-wrap gap-20'>
+            <div className='flex flex-wrap gap-4'>
               {posts.map((post) => (
                 <BlogCard key={post._id} post={post} />
               ))}
