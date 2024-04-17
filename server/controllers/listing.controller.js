@@ -102,6 +102,8 @@ export const createListing = async (req, res, next) => {
       if (type === undefined || type === 'all') {
         type = { $in: ['sale', 'rent'] };
       }
+
+      let userId = req.query.userId
   
       const searchTerm = req.query.searchTerm || '';
   
@@ -115,6 +117,7 @@ export const createListing = async (req, res, next) => {
         furnished,
         parking,
         type,
+        userId
       })
         .sort({ [sort]: order })
         .limit(limit)

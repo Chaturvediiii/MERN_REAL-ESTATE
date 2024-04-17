@@ -81,7 +81,7 @@ export default function DashSidebar() {
                   icon={HiAnnotation}
                   as='div'
                 >
-                  Comments
+                  Listings
                 </Sidebar.Item>
               </Link>
             </>

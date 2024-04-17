@@ -47,6 +47,7 @@ export default function Properties() {
         offer: offerFromUrl === 'true' ? true : false,
         sort: sortFromUrl || 'created_at',
         order: orderFromUrl || 'desc',
+        userId: ''
       });
     }
 
@@ -64,6 +65,8 @@ export default function Properties() {
       setListings(data);
       setLoading(false);
     };
+
+    console.log(sidebardata);
 
     fetchListings();
   }, [location.search]);

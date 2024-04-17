@@ -1,5 +1,4 @@
 import { useState,useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 export default function BlogCard({ post }) {
   const [user,setUser] = useState({})
@@ -28,7 +27,7 @@ export default function BlogCard({ post }) {
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{user.username}</div>
         <p className="text-gray-700 text-base">{post.title}</p>
-        <p className="text-gray-700 text-base">{post.createdAt}</p>
+        <p className="text-gray-700 text-base">{new Date(post.createdAt).toLocaleDateString()}</p>
       </div>
     </div>
   );
