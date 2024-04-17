@@ -31,7 +31,8 @@ export default function FooterBar() {
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  Blog App
+                  <span className="text-slate-500">Real</span>
+        <span className="text-slate-700">Estate</span>
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
