@@ -13,7 +13,7 @@ export default function Header() {
         <span className="text-slate-700">Estate</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Link to="/profile">
+        <Link to="/dashboard">
           {currentUser ? (
             <img
               className="rounded-full h-7 w-7 object-cover"
@@ -42,7 +42,7 @@ export default function Header() {
           <Link to="/our-agents">Our Agents</Link>
         </Navbar.Link>
         <Navbar.Link active={path === "/blog"} as={"div"}>
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog">Testimonials</Link>
         </Navbar.Link>
         <Navbar.Link active={path === "/contact"} as={"div"}>
           <Link to="/contact">Contact Us</Link>

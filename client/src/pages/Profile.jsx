@@ -212,7 +212,7 @@ export default function Profile() {
          {loading ? 'Loading...' : 'Update'}
         </button>
         <Link className='bg-green-700 text-white text-center rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80' to='/create-listing'>Create Listing</Link>
-        <Link className='bg-yellow-700 text-white text-center rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80' to='/create-blog'>Create Blog</Link>
+        <Link className='bg-yellow-700 text-white text-center rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80' to='/create-blog'>Give Feedback</Link>
       </form>
       <div className='flex justify-between mt-5'>
         <span  onClick={handleDeleteUser} className='text-red-700 cursor-pointer'>Delete account</span>

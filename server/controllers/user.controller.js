@@ -45,7 +45,7 @@ export const updateUser = async (req, res, next) => {
     if(req.user.id !== req.params.id) return next(errorHandler(401,'You can only view your own listings'))
     else{
       try{
-        const listings = await Listing.find({userRef:req.params.id})
+        const listings = await Listing.find({userId:req.params.id})
         res.status(200).json(listings)
       }
       catch(error){

@@ -1,4 +1,5 @@
 import Post from '../models/post.model.js';
+import User from '../models/user.model.js';
 import { errorHandler } from '../utils/error.js';
 
 export const create = async (req, res, next) => {
@@ -17,7 +18,14 @@ export const create = async (req, res, next) => {
   });
   try {
     const savedPost = await newPost.save();
-    console.log('yha tk aa gya');
+    const user = await User.findById(savedPost.userId);
+    console.log(savedPost);
+    if (user) {
+      user.posts.push(savedPost._id);
+      await user.save();
+    } else {
+      throw new Error('User not found');
+    }
     res.status(201).json(savedPost);
   } catch (error) {
     next(error);
@@ -30,7 +38,7 @@ export const getPosts = async (req, res, next) => {
     const limit = parseInt(req.query.limit) || 9;
     const sortDirection = req.query.order === 'asc' ? 1 : -1;
     const posts = await Post.find({
-      ...(req.query.userRef && { userId: req.query.userRef }),
+      ...(req.query.userId && { userId: req.query.userId }),
       ...(req.query.category && { category: req.query.category }),
       ...(req.query.slug && { slug: req.query.slug }),
       ...(req.query.postId && { _id: req.query.postId }),
@@ -75,6 +83,7 @@ export const deletepost = async (req, res, next) => {
   }
   try {
     await Post.findByIdAndDelete(req.params.postId);
+    await User
     res.status(200).json('The post has been deleted');
   } catch (error) {
     next(error);

@@ -17,6 +17,7 @@ import UpdateListing from './pages/updateListing';
 import Listing from './pages/Listing';
 import NotFound from './pages/NotFound';
 import CreateBlog from './pages/CreateBlog';
+import Dashboard from './pages/Dashboard';
 
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
           <Route path='/profile' element={<Profile/>}/>
           <Route path='/create-listing' element={<CreateListing/>}/>
           <Route path='/update-listing/:listingId' element={<UpdateListing/>}/>
+          <Route path='/dashboard' element={<Dashboard/>}/>
         </Route>
         <Route path='/create-blog' element={<CreateBlog/>}/>
         <Route path='/sign-up' element={<SignUp/>}/>

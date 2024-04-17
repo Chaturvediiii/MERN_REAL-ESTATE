@@ -34,7 +34,7 @@ export default function CreateBlog() {
 
       if (res.ok) {
         setPublishError(null);
-        navigate(`/post/${data.slug}`);
+        navigate(`/blog`);
       }
     } catch (error) {
       setPublishError('Something went wrong');

@@ -1,13 +1,26 @@
 import Listing from "../models/listing.model.js";
+import User from "../models/user.model.js";
 import { errorHandler } from "../utils/error.js";
 
 export const createListing = async (req, res, next) => {
-    try {
-      const listing = await Listing.create(req.body);
-      return res.status(201).json(listing);
-    } catch (error) {
-      next(error);
+  const newList = new Listing({
+    ...req.body,
+    userId: req.user.id,
+  });
+  try {
+    const savedList = await newList.save();
+    const user = await User.findById(savedList.userId);
+    console.log(savedList);
+    if (user) {
+      user.listings.push(savedList._id);
+      await user.save();
+    } else {
+      throw new Error('User not found');
     }
+    res.status(201).json(savedList);
+  } catch (error) {
+    next(error);
+  }
   };
 
   export const deleteListing = async (req, res, next) => {
@@ -17,7 +30,7 @@ export const createListing = async (req, res, next) => {
       return next(errorHandler(404, 'Listing not found!'));
     }
   
-    if (req.user.id !== listing.userRef) {
+    if (req.user.id !== listing.userId) {
       return next(errorHandler(401, 'You can only delete your own listings!'));
     }
   
@@ -34,7 +47,7 @@ export const createListing = async (req, res, next) => {
     if (!listing) {
       return next(errorHandler(404, 'Listing not found!'));
     }
-    if (req.user.id !== listing.userRef) {
+    if (req.user.id !== listing.userId) {
       return next(errorHandler(401, 'You can only update your own listings!'));
     }
   

@@ -50,13 +50,18 @@ const listingSchema = new mongoose.Schema(
       type: Array,
       required: true,
     },
-    userRef: {
+    userId: {
       type: String,
       required: true,
     },
   },
   { timestamps: true }
 );
+
+listingSchema.pre('remove', function(next) {
+  const User = mongoose.model('User');
+  User.updateOne({ _id: this.author }, { $pull: { posts: this._id } }, next);
+});
 
 const Listing = mongoose.model('Listing', listingSchema);
 
