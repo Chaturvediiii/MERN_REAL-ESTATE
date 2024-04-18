@@ -12,7 +12,7 @@ export default function DashListing() {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await fetch(`/api/listing/get?userId=${currentUser._id}`);
+        const res = await fetch(`/api/listing/getUser?userId=${currentUser._id}`);
         const data = await res.json();
         console.log(data);
         if (res.ok) {
@@ -33,7 +33,7 @@ export default function DashListing() {
     const startIndex = comments.length;
     try {
       const res = await fetch(
-        `/api/listing/get?userId=${currentUser._id}&startIndex=${startIndex}`
+        `/api/listing/getUser?userId=${currentUser._id}&startIndex=${startIndex}`
       );
       const data = await res.json();
       if (res.ok) {
