@@ -17,7 +17,7 @@ const About = () => {
             <div className="md:w-1/2 md:mr-4 mb-8 md:mb-0">
               <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
               <p className="text-lg leading-relaxed">
-                At [Your Company Name], we envision a world where finding your
+                we envision a world where finding your
                 dream home is simple and hassle-free. Our vision is to create
                 an innovative platform that connects buyers, sellers, and
                 renters seamlessly, providing the best possible experience for
