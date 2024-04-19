@@ -21,32 +21,31 @@ export default function BlogCard({ post }) {
   }, [post]);
   return (
     <div className="w-full sm:w-[330px] bg-white shadow-md rounded-md overflow-hidden">
-      <Link to='/blog'>
-        <div className="p-4">
-          <div className="flex items-center">
-            <img
-              className="w-12 h-12 rounded-full mr-4"
-              src={user.avatar}
-              alt="Profile"
-            />
-            <div>
-              <h2 className=" flex items-center">
-                <CiUser className="text-slate-500 text-sm" />
-                Username : {user.username}
-              </h2>
-              <p className="flex items-center">
-                <MdOutlineEmail className="text-slate-500 text-sm" />
-                Contact : {user.email}
-              </p>
-              <p className="flex items-center">
-                <MdOutlineDateRange className="text-slate-500 text-sm"/>
-                Created at : {new Date().toLocaleDateString()}
-              </p>
-            </div>
+    <Link to='/blog' className="block hover:bg-gray-100 transition duration-300">
+      <div className="p-4">
+        <div className="flex items-center mb-4">
+          <img
+            className="w-12 h-12 rounded-full mr-4"
+            src={user.avatar}
+            alt="Profile"
+          />
+          <div>
+            <h2 className="text-sm text-slate-500 font-medium">
+              Username: {user.username}
+            </h2>
+            <p className="text-sm text-slate-500">
+              Contact: {user.email}
+            </p>
+            <p className="text-sm text-slate-500">
+              Created at: {new Date().toLocaleDateString()}
+            </p>
           </div>
-          <p className="flex items-center mt-4">Comment : "{post.title}"</p>
         </div>
-      </Link>
-    </div>
+        <p className="text-sm text-slate-500">
+          Comment: "{post.title}"
+        </p>
+      </div>
+    </Link>
+  </div>
   );
 }

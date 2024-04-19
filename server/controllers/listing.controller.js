@@ -101,7 +101,7 @@ export const createListing = async (req, res, next) => {
       let type = req.query.type;
   
       if (type === undefined || type === 'all') {
-        type = { $in: ['sale', 'rent'] };
+        type = { $in: ['sell', 'rent'] };
       }
 
       let userId = req.query.userId
@@ -154,7 +154,7 @@ export const createListing = async (req, res, next) => {
       let type = req.query.type;
   
       if (type === undefined || type === 'all') {
-        type = { $in: ['sale', 'rent'] };
+        type = { $in: ['sell', 'rent'] };
       }
 
       let userId = req.query.userId

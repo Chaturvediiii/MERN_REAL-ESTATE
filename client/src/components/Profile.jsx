@@ -155,7 +155,7 @@ export default function Profile() {
     );
   };
   return (
-    <div className="max-w-lg mx-auto">
+    <div className="p-12 w-full">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <input
@@ -214,7 +214,7 @@ export default function Profile() {
           className="bg-green-700 text-white text-center rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
           to="/create-listing"
         >
-          Create Listing
+          Add property details
         </Link>
         <Link
           className="bg-yellow-700 text-white text-center rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"

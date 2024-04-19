@@ -32,9 +32,9 @@ export default function DashProfile() {
     getUser();
   }, []);
   return (
-    <div className='p-3 md:mx-auto'>
-      <div className='flex-wrap flex gap-4 justify-center'>
-        <div className='flex flex-col p-3 dark:bg-slate-800 gap-4 md:w-72 w-full rounded-md shadow-md'>
+    <div className='p-3 md:mx-auto w-full'>
+      <div className='flex-wrap gap-4 justify-center'>
+        <div className='flex flex-col p-3 dark:bg-slate-800 gap-4 w-full rounded-md shadow-md'>
           <div className='flex justify-between'>
             <div className=''>
               <h3 className='text-gray-500 text-md uppercase'>
@@ -52,7 +52,7 @@ export default function DashProfile() {
             <div className='text-gray-500'>Last month</div>
           </div>
         </div>
-        <div className='flex flex-col p-3 dark:bg-slate-800 gap-4 md:w-72 w-full rounded-md shadow-md'>
+        <div className='flex flex-col p-3 dark:bg-slate-800 gap-4  w-full rounded-md shadow-md'>
           <div className='flex justify-between'>
             <div className=''>
               <h3 className='text-gray-500 text-md uppercase'>Total Posts</h3>
@@ -67,45 +67,6 @@ export default function DashProfile() {
             </span>
             <div className='text-gray-500'>Last month</div>
           </div>
-        </div>
-      </div>
-      <div className='flex flex-wrap gap-4 py-3 mx-auto justify-center'>
-        <div className='flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800'>
-          <div className='flex justify-between  p-3 text-sm font-semibold'>
-            <h1 className='text-center p-2'>Recent comments</h1>
-            <Button outline gradientDuoTone='purpleToPink'>
-              <Link to={'/dashboard?tab=comments'}>See all</Link>
-            </Button>
-          </div>
-          <Table hoverable>
-            <Table.Head>
-              <Table.HeadCell>Comment content</Table.HeadCell>
-              <Table.HeadCell>Likes</Table.HeadCell>
-            </Table.Head>
-          </Table>
-        </div>
-        <div className='flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800'>
-          <div className='flex justify-between  p-3 text-sm font-semibold'>
-            <h1 className='text-center p-2'>Recent Feedbacks</h1>
-            <Button outline gradientDuoTone='purpleToPink'>
-              <Link to={'/dashboard?tab=posts'}>See all</Link>
-            </Button>
-          </div>
-          <Table hoverable>
-            <Table.Head>
-              <Table.HeadCell>Post Title</Table.HeadCell>
-              <Table.HeadCell>Category</Table.HeadCell>
-            </Table.Head>
-            {posts &&
-              posts.map((post) => (
-                <Table.Body key={currentUser._id} className='divide-y'>
-                  <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
-                    <Table.Cell className='w-96'>{post.title}</Table.Cell>
-                    <Table.Cell className='w-5'>{post.category}</Table.Cell>
-                  </Table.Row>
-                </Table.Body>
-              ))}
-          </Table>
         </div>
       </div>
     </div>

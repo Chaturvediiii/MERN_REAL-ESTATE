@@ -37,12 +37,12 @@ export default function ListingItem({ listing }) {
             <div className='font-bold text-xs text-uppercase'>
               {listing.bedrooms > 1
                 ? `${listing.bedrooms} beds `
-                : `${listing.bedrooms} bed `}
+                : `${listing.bedrooms} beds `}
             </div>
             <div className='font-bold text-xs text-uppercase'>
               {listing.bathrooms > 1
                 ? `${listing.bathrooms} baths `
-                : `${listing.bathrooms} bath `}
+                : `${listing.bathrooms} baths `}
             </div>
             <div className='font-bold text-xs text-red-600 text-uppercase'>
               {listing.type > 1
