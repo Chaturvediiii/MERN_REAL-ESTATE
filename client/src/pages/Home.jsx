@@ -10,7 +10,7 @@ export default function Home() {
       <HeroSection/>
       <AboutPage/>
       <List/>
-      <Blog/>
+      <Blog number={6}/>
     </div>
   )
 }

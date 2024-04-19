@@ -40,7 +40,7 @@ export default function FooterBar() {
               <Footer.Title title='Follow us' />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href='https://github.com/Chaturvediiii'
+                  href='/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -62,7 +62,7 @@ export default function FooterBar() {
         <div className='w-full sm:flex sm:items-center sm:justify-between'>
           <Footer.Copyright
             href='#'
-            by="Blog App"
+            by="Real-Estate"
             year={new Date().getFullYear()}
           />
           <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">

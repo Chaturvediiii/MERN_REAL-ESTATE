@@ -51,7 +51,7 @@ export default function DashListing() {
     setShowModal(false);
     try {
       const res = await fetch(
-        `/api/listing/deleteListing/${commentIdToDelete}`,
+        `/api/listing/delete/${commentIdToDelete}`,
         {
           method: 'DELETE',
         }

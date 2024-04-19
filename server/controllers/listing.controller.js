@@ -36,6 +36,7 @@ export const createListing = async (req, res, next) => {
   
     try {
       await Listing.findByIdAndDelete(req.params.id);
+      console.log('deleted');
       res.status(200).json('Listing has been deleted!');
     } catch (error) {
       next(error);

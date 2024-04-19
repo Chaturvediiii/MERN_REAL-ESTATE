@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import BlogCard from "../components/BlogCard";
 import { Link } from "react-router-dom";
 
-export default function Blog() {
+export default function Blog({number}) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch("/api/post/getPosts?limit=4");
+      const res = await fetch(`/api/post/getPosts?limit=${number}`);
+      console.log(number);
       const data = await res.json();
       setPosts(data.posts);
     };
