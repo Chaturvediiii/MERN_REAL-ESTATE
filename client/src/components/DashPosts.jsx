@@ -7,6 +7,7 @@ import { set } from 'mongoose';
 
 export default function DashPosts() {
   const { currentUser } = useSelector((state) => state.user);
+  const userId = currentUser._id
   const [userPosts, setUserPosts] = useState([]);
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -51,8 +52,9 @@ export default function DashPosts() {
   const handleDeletePost = async () => {
     setShowModal(false);
     try {
+      const postId = postIdToDelete
       const res = await fetch(
-        `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        `/api/post/deletepost/${postId}/${userId}`,
         {
           method: 'DELETE',
         }
@@ -85,7 +87,7 @@ export default function DashPosts() {
               </Table.HeadCell>
             </Table.Head>
             {userPosts.map((post) => (
-              <Table.Body className='divide-y'>
+              <Table.Body className='divide-y' key={post._id}>
                 <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
                   <Table.Cell>
                     {new Date(post.updatedAt).toLocaleDateString()}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { FaUser, FaComment } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { CiUser } from "react-icons/ci";
+import { MdOutlineEmail,MdOutlineDateRange } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 export default function BlogCard({ post }) {
@@ -8,7 +8,6 @@ export default function BlogCard({ post }) {
   useEffect(() => {
     const getUser = async () => {
       try {
-        console.log(post.userRef);
         const res = await fetch(`/api/user/${post.userId}`);
         const data = await res.json();
         if (res.ok) {
@@ -32,19 +31,20 @@ export default function BlogCard({ post }) {
             />
             <div>
               <h2 className=" flex items-center">
-                <FaUser className="text-slate-500 text-sm" />
+                <CiUser className="text-slate-500 text-sm" />
                 Username : {user.username}
               </h2>
               <p className="flex items-center">
-                <MdEmail className="text-slate-500 text-sm" />
+                <MdOutlineEmail className="text-slate-500 text-sm" />
                 Contact : {user.email}
+              </p>
+              <p className="flex items-center">
+                <MdOutlineDateRange className="text-slate-500 text-sm"/>
+                Created at : {new Date().toLocaleDateString()}
               </p>
             </div>
           </div>
           <p className="flex items-center mt-4">Comment : "{post.title}"</p>
-        </div>
-        <div className="bg-gray-100 px-4 py-2 text-sm text-gray-600">
-          Created at : {new Date().toLocaleDateString()}
         </div>
       </Link>
     </div>

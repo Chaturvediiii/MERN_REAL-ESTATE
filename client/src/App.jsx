@@ -7,7 +7,6 @@ import SignIn from './pages/SignIn';
 import Properties from './pages/Properties';
 import Header from './components/Header';
 import Contact from './pages/Contact';
-import OurAgents from './pages/OurAgents';
 import Blog from './pages/Blog';
 import SignUp from './pages/SignUp';
 import PrivateRoute from './components/PrivateRoute';
@@ -38,7 +37,6 @@ export default function App() {
         <Route path='/sign-in' element={<SignIn/>}/>
         <Route path='/properties' element={<Properties/>} />
         <Route path='/contact' element={<Contact/>}/>
-        <Route path='/our-agents' element={<OurAgents/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/listing/:listingId' element={<Listing/>}/>
         <Route path='/*' element={<NotFound/>}/>
