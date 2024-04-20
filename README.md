@@ -3,7 +3,7 @@
 
 # RealEstate Application
 
-RealEstate is a MERN (MongoDB, Express.js, React.js, Node.js) web application designed to simplify the process of buying, selling, or renting properties. Users can sign up or log in using Google or email, create and manage their profiles, perform CRUD operations on properties, and leave feedback about their experience using the website.
+RealEstate is a MERN (MongoDB, Express.js, React.js, Node.js) web application designed to simplify the process of  selling, or renting properties. Users can sign up or log in using Google or email, create and manage their profiles, perform CRUD operations on properties, and leave feedback about their experience using the website.
 
 ## Features
 
