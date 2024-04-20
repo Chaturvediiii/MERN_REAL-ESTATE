@@ -158,7 +158,7 @@ export default function Properties() {
                 onChange={handleChange}
                 checked={sidebardata.type === 'all'}
               />
-              <span>Rent & Sale</span>
+              <span>Rent & Sell</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -178,7 +178,7 @@ export default function Properties() {
                 onChange={handleChange}
                 checked={sidebardata.type === 'sale'}
               />
-              <span>Sale</span>
+              <span>Sell</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -235,7 +235,7 @@ export default function Properties() {
       </div>
       <div className='flex-1'>
         <h1 className='text-3xl font-semibold border-b p-3 text-slate-700 mt-5'>
-          Listing results:
+          Results:
         </h1>
         <div className='p-7 flex flex-wrap gap-4'>
         {currentUser===null && (
