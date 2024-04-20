@@ -46,7 +46,7 @@ export default function ListingItem({ listing }) {
             </div>
             <div className='font-bold text-xs text-red-600 text-uppercase'>
               {listing.type==='sale' ?
-              `Sell` : 'Rent'
+              `Sale` : 'Rent'
               }
             </div>
           </div>
