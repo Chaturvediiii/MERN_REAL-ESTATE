@@ -36,7 +36,6 @@ export const createListing = async (req, res, next) => {
     try {
       await Listing.findByIdAndDelete(req.params.id);
       await User.updateMany({ listings: req.params.id }, { $pull: { listings: req.params.id } });
-      console.log('deleted');
       res.status(200).json('Listing has been deleted!');
     } catch (error) {
       next(error);

@@ -66,7 +66,6 @@ export default function Properties() {
       setLoading(false);
     };
 
-    console.log(sidebardata);
 
     fetchListings();
   }, [location.search]);

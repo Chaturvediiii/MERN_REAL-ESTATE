@@ -19,7 +19,6 @@ export const create = async (req, res, next) => {
   try {
     const savedPost = await newPost.save();
     const user = await User.findById(savedPost.userId);
-    console.log(savedPost);
     if (user) {
       user.posts.push(savedPost._id);
       await user.save();

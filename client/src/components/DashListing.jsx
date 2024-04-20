@@ -14,7 +14,6 @@ export default function DashListing() {
       try {
         const res = await fetch(`/api/listing/getUser?userId=${currentUser._id}`);
         const data = await res.json();
-        console.log(data);
         if (res.ok) {
           setComments(data);
           if (data&& data < 9) {
