@@ -78,7 +78,6 @@ export default function DashListing() {
             <Table.Head>
               <Table.HeadCell>Date updated</Table.HeadCell>
               <Table.HeadCell>Type</Table.HeadCell>
-              <Table.HeadCell>Username</Table.HeadCell>
               <Table.HeadCell>Bedrooms</Table.HeadCell>
               <Table.HeadCell>Bathrooms</Table.HeadCell>
               <Table.HeadCell>Furnished</Table.HeadCell>
@@ -94,7 +93,6 @@ export default function DashListing() {
                     {new Date(comment.updatedAt).toLocaleDateString()}
                   </Table.Cell>
                   <Table.Cell>{comment.type}</Table.Cell>
-                  <Table.Cell>{comment.userId}</Table.Cell>
                   <Table.Cell>{comment.bedrooms}</Table.Cell>
                   <Table.Cell>{comment.bathrooms}</Table.Cell>
                   <Table.Cell>{comment.furnished ? 'Yes' : 'No'}</Table.Cell>

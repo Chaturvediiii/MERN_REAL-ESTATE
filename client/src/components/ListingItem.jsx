@@ -45,9 +45,9 @@ export default function ListingItem({ listing }) {
                 : `${listing.bathrooms} baths `}
             </div>
             <div className='font-bold text-xs text-red-600 text-uppercase'>
-              {listing.type > 1
-                ? `${listing.type}`
-                : `${listing.type}`}
+              {listing.type==='sale' ?
+              `Sell` : 'Rent'
+              }
             </div>
           </div>
         </div>

@@ -38,7 +38,7 @@ export default function DashProfile() {
           <div className='flex justify-between'>
             <div className=''>
               <h3 className='text-gray-500 text-md uppercase'>
-                Total Listings Created
+                Total Properties Created
               </h3>
               <p className='text-2xl'>{totalListings}</p>
             </div>
@@ -55,7 +55,7 @@ export default function DashProfile() {
         <div className='flex flex-col p-3 dark:bg-slate-800 gap-4  w-full rounded-md shadow-md'>
           <div className='flex justify-between'>
             <div className=''>
-              <h3 className='text-gray-500 text-md uppercase'>Total Posts</h3>
+              <h3 className='text-gray-500 text-md uppercase'>Total Feedbacks</h3>
               <p className='text-2xl'>{totalPosts}</p>
             </div>
             <HiDocumentText className='bg-lime-600  text-white rounded-full text-5xl p-3 shadow-lg' />

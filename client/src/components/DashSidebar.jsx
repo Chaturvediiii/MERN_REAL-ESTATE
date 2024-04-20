@@ -71,7 +71,7 @@ export default function DashSidebar() {
                 icon={HiDocumentText}
                 as='div'
               >
-                Posts
+                Feedbacks
               </Sidebar.Item>
             </Link>
             <>
@@ -81,7 +81,7 @@ export default function DashSidebar() {
                   icon={HiAnnotation}
                   as='div'
                 >
-                  Listings
+                  Properties
                 </Sidebar.Item>
               </Link>
             </>

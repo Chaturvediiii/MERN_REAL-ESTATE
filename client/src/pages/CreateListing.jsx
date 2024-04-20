@@ -195,7 +195,7 @@ export default function CreateListing() {
                 id='sale'
                 className='w-5'
                 onChange={handleChange}
-                checked={formData.type === 'sell'}
+                checked={formData.type === 'sale'}
               />
               <span>Sell</span>
             </div>

@@ -94,7 +94,9 @@ export default function Profile() {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await fetch("/api/auth/signout");
+      const res = await fetch('/api/auth/signout', {
+        method: 'POST',
+      });
       const data = await res.json();
       if (data.success === false) {
         dispatch(deleteUserFailure(data.message));
@@ -240,7 +242,7 @@ export default function Profile() {
       </p>
 
       <button className="text-green-700 w-full" onClick={handleShowListings}>
-        Show Listings
+        Show Properties
       </button>
       <p className="text-red-700 mt-5">
         {showListingError ? "Error showing listings" : ""}

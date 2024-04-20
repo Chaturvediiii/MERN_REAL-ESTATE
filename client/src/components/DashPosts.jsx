@@ -73,18 +73,14 @@ export default function DashPosts() {
   };
 
   return (
-    <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
+    <div className='p-3 md:mx-auto w-full'>
       {userPosts.length > 0 ? (
         <>
           <Table hoverable className='shadow-md'>
             <Table.Head>
               <Table.HeadCell>Date updated</Table.HeadCell>
               <Table.HeadCell>Feedback title</Table.HeadCell>
-              <Table.HeadCell>Rating</Table.HeadCell>
               <Table.HeadCell>Delete</Table.HeadCell>
-              <Table.HeadCell>
-                <span>Edit</span>
-              </Table.HeadCell>
             </Table.Head>
             {userPosts.map((post) => (
               <Table.Body className='divide-y' key={post._id}>
@@ -100,7 +96,6 @@ export default function DashPosts() {
                       {post.title}
                     </Link>
                   </Table.Cell>
-                  <Table.Cell>{post.category}</Table.Cell>
                   <Table.Cell>
                     <span
                       onClick={() => {
@@ -111,14 +106,6 @@ export default function DashPosts() {
                     >
                       Delete
                     </span>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Link
-                      className='text-teal-500 hover:underline'
-                      to={`/update-post/${post._id}`}
-                    >
-                      <span>Edit</span>
-                    </Link>
                   </Table.Cell>
                 </Table.Row>
               </Table.Body>

@@ -10,7 +10,6 @@ export const createListing = async (req, res, next) => {
   try {
     const savedList = await newList.save();
     const user = await User.findById(savedList.userId);
-    console.log(savedList);
     if (user) {
       user.listings.push(savedList._id);
       await user.save();
@@ -36,6 +35,7 @@ export const createListing = async (req, res, next) => {
   
     try {
       await Listing.findByIdAndDelete(req.params.id);
+      await User.updateMany({ listings: req.params.id }, { $pull: { listings: req.params.id } });
       console.log('deleted');
       res.status(200).json('Listing has been deleted!');
     } catch (error) {
@@ -101,7 +101,7 @@ export const createListing = async (req, res, next) => {
       let type = req.query.type;
   
       if (type === undefined || type === 'all') {
-        type = { $in: ['sell', 'rent'] };
+        type = { $in: ['sale', 'rent'] };
       }
 
       let userId = req.query.userId
@@ -154,7 +154,7 @@ export const createListing = async (req, res, next) => {
       let type = req.query.type;
   
       if (type === undefined || type === 'all') {
-        type = { $in: ['sell', 'rent'] };
+        type = { $in: ['sale', 'rent'] };
       }
 
       let userId = req.query.userId

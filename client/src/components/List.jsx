@@ -10,6 +10,7 @@ export default function List() {
       try {
         const res = await fetch('/api/listing/get?limit=6');
         const data = await res.json();
+        console.log(data);
         setListings(data);
       } catch (error) {
         console.log(error);
