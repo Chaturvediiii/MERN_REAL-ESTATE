@@ -29,3 +29,5 @@ React.js: Frontend library used for building the user interface.
 Node.js: JavaScript runtime environment used for running the backend server.
 
 Tailwind CSS: Utility-first CSS framework used for styling the application.
+
+Redux: State management library used for managing application state
