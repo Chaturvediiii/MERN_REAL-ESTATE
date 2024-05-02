@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { CiUser } from "react-icons/ci";
-import { MdOutlineEmail,MdOutlineDateRange } from "react-icons/md";
+import moment from 'moment'
 import { Link } from "react-router-dom";
 
 export default function BlogCard({ post }) {
