@@ -37,7 +37,7 @@ export default function BlogCard({ post }) {
               Contact: {user.email}
             </p>
             <p className="text-sm text-slate-500">
-              Created at: {new Date().toLocaleDateString()}
+              Created at: {moment(user.createdAt).fromNow()}
             </p>
           </div>
         </div>
