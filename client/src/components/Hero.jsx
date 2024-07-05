@@ -5,7 +5,7 @@ const HeroSection = () => {
     <div className="relative min-h-screen">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('/src/assets/bg.jpg')` }}
+        style={{ backgroundImage: `url('https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg?auto=compress&cs=tinysrgb&w=600')` }}
       ></div>
       <div className="absolute bottom-20 right-20 bg-black bg-opacity-80 text-white p-4 text-center">
         <p className='uppercase text-4xl'>10 nelsons walk gulf</p>

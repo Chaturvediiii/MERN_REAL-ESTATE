@@ -22,7 +22,7 @@ export default function BlogCard({ post }) {
     <div className="w-full sm:w-[330px] p-1 rounded-xl shadow-md">
       <div className="bg-white p-6 rounded-lg">
         <blockquote className="text-gray-700 italic">
-          <img src="/src/assets/comma.png" alt="" className="w-10 h-10" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSStXjEitcsVnm-sB_WPe0EPva3U4aKEbyBHQ&s" alt="" className="w-10 h-10" />
           <p className="mb-4">
             {post.title}
           </p>
