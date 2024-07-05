@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import moment from 'moment'
+import moment from "moment";
 import { Link } from "react-router-dom";
 
 export default function BlogCard({ post }) {
@@ -19,32 +19,25 @@ export default function BlogCard({ post }) {
     getUser();
   }, [post]);
   return (
-    <div className="w-full sm:w-[330px] bg-white shadow-md rounded-md overflow-hidden">
-    <Link to='/blog' className="block hover:bg-gray-100 transition duration-300">
-      <div className="p-4">
-        <div className="flex items-center mb-4">
+    <div className="w-full sm:w-[330px] p-1 rounded-xl shadow-md">
+      <div className="bg-white p-6 rounded-lg">
+        <blockquote className="text-gray-700 italic">
+          <img src="/src/assets/comma.png" alt="" className="w-10 h-10" />
+          <p className="mb-4">
+            {post.title}
+          </p>
+        </blockquote>
+        <div className="flex items-center">
           <img
-            className="w-12 h-12 rounded-full mr-4"
             src={user.avatar}
-            alt="Profile"
+            alt="Rachel Green"
+            className="w-12 h-12 rounded-full mr-4"
           />
           <div>
-            <h2 className="text-sm text-slate-500 font-medium">
-              Username: {user.username}
-            </h2>
-            <p className="text-sm text-slate-500">
-              Contact: {user.email}
-            </p>
-            <p className="text-sm text-slate-500">
-              Created at: {moment(user.createdAt).fromNow()}
-            </p>
+            <p className="text-gray-900 font-semibold">{user.username}</p>
           </div>
         </div>
-        <p className="text-sm text-slate-500">
-          Comment: "{post.title}"
-        </p>
       </div>
-    </Link>
-  </div>
+    </div>
   );
 }

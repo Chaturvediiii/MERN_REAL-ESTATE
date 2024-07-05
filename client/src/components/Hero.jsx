@@ -2,10 +2,10 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <div className="relative h-screen">
+    <div className="relative min-h-screen">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=600')` }}
+        style={{ backgroundImage: `url('/src/assets/bg.jpg')` }}
       ></div>
       <div className="absolute bottom-20 right-20 bg-black bg-opacity-80 text-white p-4 text-center">
         <p className='uppercase text-4xl'>10 nelsons walk gulf</p>

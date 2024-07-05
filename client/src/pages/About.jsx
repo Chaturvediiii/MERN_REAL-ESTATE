@@ -2,72 +2,99 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-left my-3 text-2xl">
-          <h2 className="font-semibold text-slate-600">
-            About Us
-          </h2>
-          <p className="mt-4 text-lg leading-6 text-gray-500">
-            Welcome to our real estate platform.
+    <div className="bg-white text-gray-800">
+      {/* Hero Section */}
+      <section className="text-center py-20 bg-gray-100">
+        <h1 className="text-4xl font-bold">We are Your Real Estate Experts</h1>
+        <p className="mt-4 text-lg">
+          Delivering top-notch real estate services with a client-centric
+          approach.
+        </p>
+        <button className="mt-6 px-6 py-3 bg-slate-700 text-white rounded-md hover:bg-slate-600">
+          Enquire
+        </button>
+      </section>
+
+      {/* Stats Section */}
+      <section className="container mx-auto py-16 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <h2 className="text-4xl font-bold">3000+</h2>
+          <p>Properties Sold</p>
+        </div>
+        <div>
+          <h2 className="text-4xl font-bold">200</h2>
+          <p>Agents</p>
+        </div>
+        <div>
+          <h2 className="text-4xl font-bold">5</h2>
+          <p>Offices</p>
+        </div>
+        <div>
+          <h2 className="text-4xl font-bold">1500+</h2>
+          <p>Happy Clients</p>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="container mx-auto py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <img
+              src="/src/assets/about.jpg"
+              alt="About us"
+              className="w-full rounded-lg shadow-lg"
+            />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold">Why Choose Us?</h2>
+            <p className="mt-4">
+              With years of experience in the real estate market, we provide
+              personalized and professional services to help you find your dream
+              home or investment property.
+            </p>
+            <button className="mt-6 px-6 py-3 bg-slate-700 text-white rounded-md hover:bg-slate-600">
+              Meet Our Team
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="bg-gray-100 py-16">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold">Our Process</h2>
+          <p className="mt-4 mb-12">
+            We guide you through every step of the buying and selling process.
           </p>
-        </div>
-        <div className="mt-10 text-gray-500">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="md:w-1/2 md:mr-4 mb-8 md:mb-0">
-              <h3 className="font-bold mb-4">Our Vision</h3>
-              <p className="text-lg leading-relaxed">
-                we envision a world where finding your
-                dream home is simple and hassle-free. Our vision is to create
-                an innovative platform that connects buyers, sellers, and
-                renters seamlessly, providing the best possible experience for
-                everyone involved.
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="p-6 bg-white shadow-lg rounded-lg">
+              <h3 className="text-xl font-bold">Consultation</h3>
+              <p className="mt-2">Understanding your needs and preferences.</p>
+            </div>
+            <div className="p-6 bg-white shadow-lg rounded-lg">
+              <h3 className="text-xl font-bold">Property Search</h3>
+              <p className="mt-2">
+                Finding the right properties that match your criteria.
               </p>
             </div>
-            <div className="md:w-1/2 md:ml-4">
-              <h3 className="font-bold mb-4">Our Mission</h3>
-              <p className="text-lg leading-relaxed">
-                Our mission is to empower individuals and families in their
-                journey to find the perfect place to call home. We are
-                committed to leveraging cutting-edge technology, expert
-                guidance, and unparalleled customer service to simplify the
-                real estate process and exceed the expectations of our clients
-                and partners.
+            <div className="p-6 bg-white shadow-lg rounded-lg">
+              <h3 className="text-xl font-bold">Negotiation</h3>
+              <p className="mt-2">Ensuring you get the best deal possible.</p>
+            </div>
+            <div className="p-6 bg-white shadow-lg rounded-lg">
+              <h3 className="text-xl font-bold">Closing</h3>
+              <p className="mt-2">
+                Finalizing the deal and handing over the keys.
               </p>
             </div>
           </div>
+          <button className="mt-12 px-6 py-3 bg-slate-700 text-white rounded-md hover:bg-slate-600">
+            Learn More
+          </button>
         </div>
-        <div className="mt-10 text-left text-gray-500">
-          <h3 className="font-bold mb-4">Meet Our Team</h3>
-          <div className="flex flex-wrap">
-            <div className="w-32 h-32 bg-gray-300 rounded-full overflow-hidden flex-shrink-0 mx-4 mb-4">
-              <img
-                src="https://images.pexels.com/photos/1642228/pexels-photo-1642228.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Team Member 1"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="w-32 h-32 bg-gray-300 rounded-full overflow-hidden flex-shrink-0 mx-4 mb-4">
-              <img
-                src="https://images.pexels.com/photos/1553783/pexels-photo-1553783.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Team Member 2"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="w-32 h-32 bg-gray-300 rounded-full overflow-hidden flex-shrink-0 mx-4 mb-4">
-              <img
-                src="https://images.pexels.com/photos/1755385/pexels-photo-1755385.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Team Member 3"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   );
 };
 
 export default About;
-
-
