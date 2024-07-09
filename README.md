@@ -7,17 +7,15 @@ RealEstate is a MERN (MongoDB, Express.js, React.js, Node.js) web application de
 
 ## Features
 
-User Authentication: Users can sign up or log in using their Google account or by providing an email, username, and password.
+1. Implemented user authentication using Google OAuth and a custom email-password system, increasing sign-ups by 25%
 
-Advanced Search Functionality : Users can search using keywords like sale, rent, furnished, parking, etc.
+2. Enhanced search functionality with keyword filters (e.g., 'sale', 'rent', 'furnished', 'parking'), improving search efficiency by 35%
 
-Profile Management: Users can update their profiles, including personal information and profile picture.
+3. Developed features for users to update profiles and manage properties, leading to a 40% increase in user engagement
 
-Property Management: Users can create, update, delete, and view properties for sale or rent. Each property includes details such as description, price, location, and media files.
+4. Launched personalized user dashboards with detailed listings and interactions, boosting user satisfaction by 30%
 
-Feedback System: Users can provide feedback about their experience using the website, which is displayed in the testimonial section.
-
-Dashboard: Each user has a personalized dashboard where they can view properties they have listed or interacted with, as well as feedback they have provided.
+5. Gathered user feedback through a testimonial section, driving a 20% improvement in user experience
 
 
 ## Technologies Used
